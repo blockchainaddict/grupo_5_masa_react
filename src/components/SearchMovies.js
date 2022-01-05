@@ -46,16 +46,16 @@ function SearchMovies(){
 							{/* Buscador */}
 							<form method="GET" onSubmit={searchMovie}>
 								<div className="form-group">
-									<label htmlFor="">Buscar por título:</label>
+									<label htmlFor="">Buscar por Nombre o marca:</label>
 									<input ref={inputTag} type="text" className="form-control" />
 								</div>
-								<button className="btn btn-info">Search</button>
+								<button className="btn btn-info">Buscar</button>
 							</form>
 						</div>
 					</div>
 					<div className="row">
 						<div className="col-12">
-							<h2>Películas para la palabra: {keyword}</h2>
+							<h2>Instrumentos {keyword}</h2>
 						</div>
 						{/* Listado de películas */}
 						{
@@ -83,7 +83,7 @@ function SearchMovies(){
 							})
 						}
 					</div>
-					{ movies.length === 0 && <div className="alert alert-warning text-center">No se encontraron películas</div>}
+					{ movies.length === 0 && <div className="alert alert-warning text-center">No se encontraron Instrumentos</div>}
 				</>
 				:
 				<div className="alert alert-danger text-center my-4 fs-2">Eyyyy... ¿PUSISTE TU APIKEY?</div>

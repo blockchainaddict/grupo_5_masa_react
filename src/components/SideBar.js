@@ -1,10 +1,10 @@
 import React from 'react';
 import image from '../assets/images/logo_masa_black.svg';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
-import LastMovieInDb from './LastMovieInDb';
-import ContentRowMovies from './ContentRowMovies';
-import SearchMovies from './SearchMovies';
+import CategoriesInDb from './CategoriesInDb';
+import LastProductInDb from './LastProductInDb';
+import ContentRowInfo from './ContentRowInfo';
+import SearchProducts from './SearchProducts';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -39,7 +39,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/CategoriesInDb">
                         <i className="fas fa-fw fa-folder"></i>
                         <span>Páginas</span>
                     </Link>
@@ -47,21 +47,21 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
+                    <Link className="nav-link" to="/LastProductInDb">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Gráficos</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
+                <Link className="nav-link" to="/ContentRowInfo">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tablas</span></Link>
                 </li>
                 
                 {/*<!-- Buscador -->*/}
                 <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/SearchMovies">
+                    <Link className="nav-link" to="/SearchProducts">
                         <i className="fas fa-search"></i>
                         <span>Buscar Instrumentos</span>
                     </Link>
@@ -76,14 +76,14 @@ function SideBar(){
             {/*<!--<Route exact path="/">
                 <ContentWrapper />
             </Route>
-            <Route path="/GenresInDb">
-                <GenresInDb />
+            <Route path="/CategoriesInDb">
+                <CategoriesInDb />
             </Route>
-            <Route path="/LastMovieInDb">
-                <LastMovieInDb />
+            <Route path="/LastProductInDb">
+                <LastProductInDb />
             </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
+            <Route path="/ContentRowInfo">
+                <ContentRowInfo />
             </Route>*/}
             {/*<!-- End Microdesafio 1 -->*/}
 
@@ -92,17 +92,17 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
+                <Route path="/CategoriesInDb">
+                    <CategoriesInDb />
                 </Route>
-                <Route path="/LastMovieInDb">
-                    <LastMovieInDb />
+                <Route path="/LastProductInDb">
+                    <LastProductInDb />
                 </Route>
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                <Route path="/ContentRowInfo">
+                    <ContentRowInfo />
                 </Route>
-                <Route path="/SearchMovies">
-                    <SearchMovies />
+                <Route path="/SearchProducts">
+                    <SearchProducts />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

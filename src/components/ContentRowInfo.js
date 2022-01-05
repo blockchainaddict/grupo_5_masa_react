@@ -32,7 +32,7 @@ let actorsQuantity = {
 
 let cartProps = [moviesInDB, totalAwards, actorsQuantity];
 
-function ContentRowMovies(){
+function ContentRowInfo(){
     return (
     
         <div className="row">
@@ -47,4 +47,4 @@ function ContentRowMovies(){
     )
 }
 
-export default ContentRowMovies;
+export default ContentRowInfo;

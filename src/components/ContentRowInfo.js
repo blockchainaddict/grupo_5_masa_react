@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import SmallCard from "./SmallCard";
 
 function ContentRowInfo() {
-  const [products, setProducts] = useState(0);
-  const [users, setUsers] = useState(0);
+  const [products, setProducts] = useState([0]);
+  const [users, setUsers] = useState([0]);
 
   /*  Cada set de datos es un objeto literal */
 

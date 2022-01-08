@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import ChartRow from "./ChartRow";
 
 function Chart() {
+  
   const [products, setProducts] = useState([0]);
-
-
-//   let tableRowsData = [products];
 
   useEffect(() => {
     fetch("/api/products/")

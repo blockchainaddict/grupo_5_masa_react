@@ -20,19 +20,26 @@ function CategoriesInDb() {
       .catch((error) => console.log(error));
   }, []);
 
+  // Array de objetos de las categorías
   products.map((product) => {
     if (product !== undefined) {
       return typeArray.push(product.type);
     } else return products;
   });
 
-  categoriesArray = [...new Set(typeArray.map((category) => category.name))];
+  // Busco los repetidos, los cuento y elimino los nombres iguales
+  const busqueda = typeArray.reduce((acc, type) => {
+    acc[type.name] = ++acc[type.name] || 1;
+    return acc;
+  }, {});
 
-  console.log(categoriesArray);
+  // Convierto a array para pasarlo por props
+  categoriesArray = Object.entries(busqueda);
+
+  // Valor por default si falla la llamada a la api 
   if (categoriesArray.length === 0) {
-    categoriesArray = ['N/A'];
+    categoriesArray = ['0'];
   }
-
 
   return (
     <div className="row">

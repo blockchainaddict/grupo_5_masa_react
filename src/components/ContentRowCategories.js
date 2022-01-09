@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 function ContentRowCategories(props) {
   let listadoDeCategorias;
+  console.log(props.categories);
   if (props.categories !== null) {
     listadoDeCategorias = (
       <div className="card-body">
@@ -10,7 +11,9 @@ function ContentRowCategories(props) {
           <div className="row" key={category + i}>
             <div className="col-lg-12 mb-4">
               <div className="card bg-dark text-white shadow">
-                <div className="card-body">{category}</div>
+                <div className="card-body">
+                  {category[0]} - {category[1]} en stock
+                </div>
               </div>
             </div>
           </div>
@@ -39,7 +42,6 @@ function ContentRowCategories(props) {
 
 ContentRowCategories.defaultProps = {
   categories: "N/A",
-  cuantity: "N/A",
 };
 
 /* PROPTYPES */
@@ -47,7 +49,6 @@ ContentRowCategories.defaultProps = {
 ContentRowCategories.propTypes = {
   atritutes: PropTypes.shape({
     categories: PropTypes.string.isRequired,
-    cuantity: PropTypes.number.isRequired,
   }),
 };
 

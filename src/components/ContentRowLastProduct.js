@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import NotFound from "../assets/images/404.jpg"
+
 
 function ContentRowLastProduct(props) {
   let nameType = [];
@@ -20,16 +22,19 @@ function ContentRowLastProduct(props) {
             <img
               className="img-fluid px-3 px-sm-4 mt-3 mb-4"
               style={{ width: 40 + "rem" }}
-              src={`img/${props.lastProduct.image}`}
+
+              
+              src={props.lastProduct.image !== undefined ? `img/${props.lastProduct.image}` : NotFound}
+              // {`img/${props.lastProduct.image}`}
               alt={props.lastProduct.image}
             />
           </div>
           <p>
             <strong>Instrumento:</strong>{" "}
-            {nameType[1] != undefined ? nameType[1] : "N/A"}
+            {nameType[1] !== undefined ? nameType[1] : "N/A"}
           </p>
           <p>
-            <strong>Modelo:</strong> {props.lastProduct.model != undefined ? props.lastProduct.model : "N/A"}
+            <strong>Modelo:</strong> {props.lastProduct.model !== undefined ? props.lastProduct.model : "N/A"}
           </p>
           <p>{props.lastProduct.description}</p>
           <a

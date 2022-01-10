@@ -1,23 +1,34 @@
-import React from 'react';
-import imagenFondo from '../assets/images/mandalorian.jpg';
+import React, { useState, useEffect } from "react";
+import ContentRowLastProduct from "./ContentRowLastProduct";
 
-function LastProductInDb(){
-    return(
-        <div className="col-lg-6 mb-4">
-            <div className="card shadow mb-4">
-                <div className="card-header py-3">
-                    <h5 className="m-0 font-weight-bold text-gray-800">Nuevos Ingreso del mes</h5>
-                </div>
-                <div className="card-body">
-                    <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
-                </div>
-            </div>
-        </div>
-    )
+function ContentRowCenter() {
+  const [products, setProducts] = useState([0]);
+
+  let lastProductArray = [];
+
+  useEffect(() => {
+    fetch("/api/products/byCategories")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.data !== undefined) {
+          setProducts(data.data);
+        } else {
+          setProducts([]);
+        }
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  //  Funcion para traer el último
+  lastProductArray = products[products.length - 1];
+
+  return (
+    <React.Fragment>
+      {/*<!-- Last Movie in DB -->*/}
+      <ContentRowLastProduct lastProduct={lastProductArray} />
+      {/*<!-- End content row last movie in Data Base -->*/}
+    </React.Fragment>
+  );
 }
 
-export default LastProductInDb;
+export default ContentRowCenter;

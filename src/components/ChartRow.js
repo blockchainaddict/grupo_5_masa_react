@@ -8,14 +8,6 @@ function ChartRow(props){
                     <td>{props.id}</td>
                     <td>{props.model}</td>
                     <td>{props.description}</td>
-                    {/* <td>
-                        <ul>
-                            {props.Categories.map( (category,i) => 
-                                <li key={`category ${i}`}>{category}</li>
-                            )}
-                        </ul>
-                    </td>
-                    <td>{props.Awards}</td> */}
                 </tr>
             )
     }

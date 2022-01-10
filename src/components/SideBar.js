@@ -4,7 +4,6 @@ import ContentWrapper from './ContentWrapper';
 import CategoriesInDb from './CategoriesInDb';
 import LastProductInDb from './LastProductInDb';
 import ContentRowInfo from './ContentRowInfo';
-import SearchProducts from './SearchProducts';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -58,36 +57,9 @@ function SideBar(){
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tablas</span></Link>
                 </li>
-                
-                {/*<!-- Buscador -->*/}
-                <li className="nav-item nav-link">
-                    <Link className="nav-link" to="/SearchProducts">
-                        <i className="fas fa-search"></i>
-                        <span>Buscar Instrumentos</span>
-                    </Link>
-                </li>
-
-                {/*<!-- Divider -->*/}
+            
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
-            {/*<!-- End of Sidebar -->*/}
-
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/CategoriesInDb">
-                <CategoriesInDb />
-            </Route>
-            <Route path="/LastProductInDb">
-                <LastProductInDb />
-            </Route>
-            <Route path="/ContentRowInfo">
-                <ContentRowInfo />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Switch>
                 <Route exact path="/">
                     <ContentWrapper />
@@ -100,9 +72,6 @@ function SideBar(){
                 </Route>
                 <Route path="/ContentRowInfo">
                     <ContentRowInfo />
-                </Route>
-                <Route path="/SearchProducts">
-                    <SearchProducts />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

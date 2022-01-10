@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function ContentRowCategories(props) {
   let listadoDeCategorias;
-  console.log(props.categories);
+
   if (props.categories !== null) {
     listadoDeCategorias = (
       <div className="card-body">
